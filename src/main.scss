@@ -1,0 +1,9 @@
+@forward 'scss/theme';
+
+@use 'scss/mixins/typography';
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
