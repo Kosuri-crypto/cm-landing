@@ -41,9 +41,8 @@
     </div>
 
     <div class="section">
-        <div class="section__thumbnail">
-            <img src="./images/img-1.png" alt="Отчет об интересах компании">
-        </div>
+        <div class="section__thumbnail" style="background-image: url(<%= require('./images/img-1.png') %>);"></div>
+        <div></div>
         <div class="section__content">
             <h4 class="section__content__title">Отчет об интересах компании</h4>
             <p class="section__content__text">
@@ -62,9 +61,6 @@
     </div>
 
     <div class="section section--reverse">
-        <div class="section__thumbnail">
-            <img src="./images/img-2.jpg" alt="Инцидент на LV-426">
-        </div>
         <div class="section__content">
             <h4 class="section__content__title">Инцидент на LV-426</h4>
             <p class="section__content__text">
@@ -84,6 +80,8 @@
                 при этом поразительное совершенство своих инстинктов и формы.
             </p>
         </div>
+        <div></div>
+        <div class="section__thumbnail" style="background-image: url(<%=require('./images/img-2.jpg') %>);"></div>
     </div>
 
     <div class="section section--small-invert">
@@ -94,9 +92,8 @@
     </div>
 
     <div class="section">
-        <div class="section__thumbnail">
-            <img src="./images/img-3.png" alt="Новое начало">
-        </div>
+        <div class="section__thumbnail" style="background-image: url(<%=require('./images/img-3.png') %>);"></div>
+        <div></div>
         <div class="section__content">
             <h4 class="section__content__title">Новое начало</h4>
             <p class="section__content__text">
@@ -118,9 +115,6 @@
     </div>
 
     <div class="section section--reverse">
-        <div class="section__thumbnail">
-            <img src="./images/img-4.jpg" alt="Ксеноморф может быть воссоздан">
-        </div>
         <div class="section__content">
             <h4 class="section__content__title">Ксеноморф может быть воссоздан</h4>
             <p class="section__content__text">
@@ -138,32 +132,94 @@
                 У нас еще никогда не было настолько серьезных шансов найти и поймать ксеноморфа.
             </p>
         </div>
+        <div></div>
+        <div class="section__thumbnail" style="background-image: url(<%=require('./images/img-4.jpg') %>);"></div>
     </div>
 
     <div class="section section--large">
-        <div class="section__thumbnail">
-            <img src="./images/img-5.jpg" alt="Новое начало">
-        </div>
+        <div class="section__thumbnail" style="background-image: url(<%=require('./images/img-5.jpg') %>);"></div>
+        <div></div>
         <div class="section__content">
-            <h4 class="section__content__title">Новое начало</h4>
+            <h4 class="section__content__title">Возможное применение</h4>
             <p class="section__content__text">
-                За более чем столетние работы с ксеноморфом ВСОС проявили катастрофическую некомпетентность и
-                самоуверенную халатность.
+                На борту “Ауриги” доктора Рен и Гидемен провели широкий диапазон простых тестов, считая, что
+                “выдрессируют” ксеноморфов, заставив их подчиняться командам.
             </p>
             <p class="section__content__text">
-                Очевидно, что пришла пора вернуть всю информацию о ксеноморфе XX121 в руки частной компании.
+                Они не увидели открывшихся перед ними огромных возможностей и считали, что лучшее применение ксеноморфов
+                - в качестве солдат.
             </p>
             <p class="section__content__text">
-                Наши источники во ВСОС обещают передать все данные, связанные с ксеноморфами, и мы готовы тщательно
-                изучить все, что они предоставят, в поисках полезных сведений.
+                Но что еще ксеноморфы могут дать нам, попав в правильные руки?
+            </p>
+        </div>
+
+        <div class="section__content">
+            <h4 class="section__content__title">Применение в медицине</h4>
+            <p class="section__content__text">
+                Регенерация ксеноморфов гораздо быстрее человеческой, и при всех известных контактах они не проявляли ни
+                следа каких либо болезней.
+            </p>
+            <p class="section__content__text">
+                Первоначальные данные, собранные андроидом Эшем, описывают чужого как совершенный организм.
+            </p>
+            <p class="section__content__text">
+                Детальное изучение генетиками биологии ксеноморфа может стать неоценимым для человечества, если
+                применить его для лечения болезней, продления жизни и в биомеханике.
+            </p>
+        </div>
+
+        <div class="section__content">
+            <h4 class="section__content__title">Военное применение</h4>
+            <p class="section__content__text">
+                Представьте, как брызгикрови ксеноморфов поражают вражеские заводы и бункеры.
+            </p>
+            <p class="section__content__text">
+                Если эту кислоту можно хранить, ее потенциально можно сделать частью оружия по тому же принципу, по
+                какому действуют пули с разрывными наконечниками.
+            </p>
+            <p class="section__content__text">
+                Когда мы сможем провести анализ недеградировавших образцов крови XX121, то создадим системы
+                разбрызгивания с учетом их структуры и силы воздействия.
+            </p>
+        </div>
+
+        <div class="section__content">
+            <h4 class="section__content__title">Наука: материалы</h4>
+            <p class="section__content__text">
+                Подумайте о сопротивляемости экстремальным условиям, которую проявили ксеноморфы!
+            </p>
+            <p class="section__content__text">
+                Какие прочные, но легкие материалы можно создать на основе ксенотканей!
+            </p>
+            <p class="section__content__text">
+                Понимание химической основы прочности экзоскелета этого организма может дать намнадежную базу для
+                создания материалов всего, от военной брони и защитных скафандров до корпусов исследовательских и
+                коммерческих звездолетов.
+            </p>
+        </div>
+
+        <div class="section__content">
+            <h4 class="section__content__title">Военные: прямой контакт</h4>
+            <p class="section__content__text">
+                Имеющиеся данные с корабля “Аурига” заставляют сомневаться, что трутня ксеноморфа можно выдрессировать и
+                сделать солдатом.
+            </p>
+            <p class="section__content__text">
+                Однако высокий интелект королевы чужих оставляет возможность того, что ее можно заставить управлять
+                трутнями.
+            </p>
+            <p class="section__content__text">
+                Но и без этого аккуратное размещение яиц ксеноморфов на территории противника позволит уничтожить целые
+                вражеские батальоны с минимальным риском для наших солдат.
+            </p>
+            <p class="section__content__text">
+                Как вариант, бойцы противника могут быть заражены и отпущены к своим товарищам.
             </p>
         </div>
     </div>
 
     <div class="section section--reverse">
-        <div class="section__thumbnail">
-            <img src="./images/img-6.jpg" alt="Чем вы можете нам помочь?">
-        </div>
         <div class="section__content">
             <h4 class="section__content__title">Чем вы можете нам помочь?</h4>
             <p class="section__content__text">
@@ -184,16 +240,18 @@
                 Как обычно, компания оценит ваш вклад и вашу преданность.
             </p>
         </div>
+        <div></div>
+        <div class="section__thumbnail" style="background-image: url(<%=require('./images/img-6.jpg') %>);"></div>
     </div>
 
     <div class="section section--small-invert">
-        <p class="section__text">
+        <p class="section__text3">
             Наше будущее - это ксеноморф XX121
         </p>
-        <p class="section__text">
+        <p class="section__text2">
             Это будущее наступило
         </p>
-        <p class="section__text">
+        <p class="section__text1">
             Мы к нему готовы
         </p>
     </div>
@@ -203,7 +261,8 @@
     </div>
 
     <div class="section section--small-invert">
-        <svg class="section__logo" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" viewBox="0 0 500 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="section__logo" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" viewBox="0 0 500 244"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M0 45.849L109.695 188.706H178.571L250 90.491L319.822 188.706H383.597L500 45.849H428.571L357.143 144.063L285.714 45.849H214.286L142.857 144.063L71.428 45.849H0Z"
                 fill="#006399" />

@@ -2,6 +2,9 @@
 
 @use 'scss/mixins/typography';
 
+$breakpoint-laptop: 1024px;
+$breakpoint-mobile: 800px;
+
 html,
 body {
     height: 100%;
@@ -11,6 +14,8 @@ body {
 body {
     --offset: 156px;
     --columns: 12;
+    --addition-offset-x: 1;
+    --addition-offset-x2: 1;
 
     display: grid;
     grid-template-columns: var(--offset) repeat(var(--columns), 1fr) var(--offset);
@@ -21,7 +26,7 @@ body {
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
 
-    & > * {
+    &>* {
         --_column: var(--column, 2/-2);
 
         grid-column: var(--_column);
@@ -29,14 +34,56 @@ body {
         grid-template-columns: subgrid;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: $breakpoint-laptop) {
         --offset: 32px;
         --columns: 8;
+        --addition-offset-x: 0;
+
+        .section {
+            &__text {
+                grid-column: 2/-2;
+            }
+        }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: $breakpoint-mobile) {
         --offset: 16px;
         --columns: 4;
+        --addition-offset-x2: 0;
+
+        .hero-section__wrapper {
+            grid-column: 2/-2;
+        }
+
+        .section {
+            row-gap: 50px;
+
+            &__thumbnail,
+            &__content {
+                grid-column: 1/-1;
+            }
+
+            &__button,
+            &__logo,
+            &__copy,
+            &__text3,
+            &__text2,
+            &__text1 {
+                grid-column: 2/-2;
+            }
+
+            &__thumbnail {
+                height: 500px;
+
+                &+div {
+                    display: none;
+                }
+            }
+
+            &__copy {
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -52,10 +99,6 @@ body {
     &__logo {
         max-width: 168px;
         max-height: 48px;
-        background: url("./images/WY-Logo.svg");
-        background-size: cover;
-        background-position: left;
-        background-repeat: no-repeat;
     }
 
     &__navigation {
@@ -117,22 +160,20 @@ body {
 .section {
     padding-block: 100px;
     box-sizing: border-box;
-    grid-template-areas: "thumbnail content";
-    //grid-auto-flow: dense;
+    // grid-template-areas: "thumbnail content";
+    grid-auto-flow: dense;
 
     &__thumbnail {
-        grid-area: thumbnail;
-        grid-column: span calc(var(--columns) / 2);
-        display: grid;
-        grid-template-columns: subgrid;
-
-        & img {
-            grid-column: 1/-2;
-        }
+        // grid-area: thumbnail;
+        grid-column: span calc(var(--columns) / 2 - var(--addition-offset-x2));
+        border-radius: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &__content {
-        grid-area: content;
+        // grid-area: content;
         grid-column: span calc(var(--columns) / 2);
         display: flex;
         flex-direction: column;
@@ -168,15 +209,39 @@ body {
         color: var(--md-sys-color-on-surface-variant);
     }
 
+    &__text3,
+    &__text2,
+    &__text1 {
+        margin: 0;
+        grid-column: 2/-2;
+        color: var(--md-sys-color-on-primary-container);
+        text-align: center;
+    }
+
+    &__text3 {
+        margin-top: 100px;
+        @include typography.display-small;
+    }
+
+    &__text2 {
+        margin-block: 16px;
+        @include typography.display-medium;
+    }
+
+    &__text1 {
+        margin-bottom: 100px;
+        @include typography.display-large;
+    }
+
     &__button {
-        grid-column: calc(var(--columns) / 2 - 1)/span calc(var(--columns) / 2);
+        grid-column: calc(var(--columns) / 2 - var(--addition-offset-x)) / span calc(var(--columns) / 2);
         margin-inline: 0;
         margin-block: 74px;
         @include typography.display-medium;
     }
 
     &__logo {
-        grid-column: calc(var(--columns) / 2 - 1)/span calc(var(--columns) / 2);
+        grid-column: calc(var(--columns) / 2 - var(--addition-offset-x)) / span calc(var(--columns) / 2);
         margin-inline: 0;
         margin-block: 93px;
     }
@@ -190,9 +255,9 @@ body {
         color: var(--md-sys-color-inverse-on-surface);
     }
 
-    &--reverse {
-        grid-template-areas: "content thumbnail";
-    }
+    // &--reverse {
+    //     grid-template-areas: "content thumbnail";
+    // }
 
     &--small {
         grid-column: 1/-1;
@@ -204,6 +269,10 @@ body {
         grid-column: 1/-1;
         padding-block: 0;
         background-color: var(--md-sys-color-surface-variant);
+    }
+
+    &--large {
+        row-gap: 50px;
     }
 }
 
@@ -217,5 +286,6 @@ body {
     background-color: var(--md-sys-color-primary);
     @include typography.display-medium;
     color: var(--md-sys-color-on-primary);
+    text-align: center;
     cursor: pointer;
 }
